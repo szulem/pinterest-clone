@@ -1,0 +1,9 @@
+#pins.transitions-enabled
+	- @pins.each do |pin|
+		.box.panel.panel-default
+			= link_to (image_tag pin.image.url), pin
+			.panel-body
+				%h2= link_to pin.title, pin
+				%p.user
+				Author:
+				= link_to pin.user.email, user_pins_path(user: pin.user), title: "All pins of #{pin.user.email} user"
